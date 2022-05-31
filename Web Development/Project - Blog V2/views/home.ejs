@@ -1,0 +1,15 @@
+<%- include("partials/header") -%>
+<form action="/compose">
+  <button type="submit" class="btn btn-default btn-circle btn-xl">+</button>
+</form>
+<h1>Home</h1>
+<p><%= startingHomeContent %></p>
+<% posts.forEach(post => { %>
+<div>
+  <h1><%= post.title %></h1>
+  <p>
+    <%= post.content.substring(0, 100) %>
+    <a href="/posts/<%= post._id %>"> Read More ...</a>
+  </p>
+</div>
+<% }); %> <%- include("partials/footer") -%>
